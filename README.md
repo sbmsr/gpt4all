@@ -58,7 +58,7 @@ Setup the environment
 python -m pip install -r requirements.txt
 
 cd transformers
-pip install -e . 
+pip install -r requirements.txt
 
 cd ../peft
 pip install -e .
