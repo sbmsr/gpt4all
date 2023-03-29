@@ -40,7 +40,7 @@ Raw Data:
 - [Full Dataset with P3](https://s3.amazonaws.com/static.nomic.ai/gpt4all/2022_03_27/gpt4all_curated_data_full_2022_03_27.tar.gz)
   - Explorer: https://atlas.nomic.ai/map/gpt4all_data_clean
 
-We are not distributing a LLaMa 7B checkpoint.
+We are not distributing a LLaMa 3 checkpoint.
 
 You can reproduce our trained model by doing the following:
 
@@ -67,7 +67,7 @@ pip install -e .
 ## Training
 
 ```bash
-accelerate launch --dynamo_backend=inductor --num_processes=8 --num_machines=1 --machine_rank=0 --deepspeed_multinode_launcher standard --mixed_precision=bf16  --use_deepspeed --deepspeed_config_file=configs/deepspeed/ds_config.json train.py --config configs/train/finetune-7b.yaml
+accelerate launch --dynamo_backend=inductor --num_processes=8 --num_machines=1 --machine_rank=0 --deepspeed_multinode_launcher standard --mixed_precision=bf16  --use_deepspeed --deepspeed_config_file=configs/deepspeed/ds_config.json train.py --config configs/train/finetune.yaml
 ```
 
 ## Generate
